@@ -1,0 +1,21 @@
+= Puppet module: rdiff_backup
+
+This puppet module allows to configure simple backup jobs with rdiff-backup.
+It ensures presence of the package, manages an includelist and an appropriate
+cronjob.
+
+== Usage
+
+Most common use case for the module is to just include iit and configure
+it in the hiera backend.
+
+So including it via the following line of code or in a ENC declaration
+(apart from proper configuration in hiera or top-scope variables)$            
+is usually enough:
+
+     class { 'rdiff_backup': }
+
+By default it will backup /srv and /etc to a hostname-specific directory
+in /srv/configs/backup.
+This can be changed by appropriate parameters to the class. See documentation
+of the main manifest for an explanation of the parameters.
